@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="8dp"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/card_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/card_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="error"
+            app:layout_constraintStart_toEndOf="@+id/card_start"
+            app:layout_constraintTop_toTopOf="parent"
+            android:maxLines="5"
+            android:singleLine="false"
+            android:ellipsize="end"
+            android:lines="4"  />
+
+        <github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar
+            android:id="@+id/card_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/stacked_horizontal_progress"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

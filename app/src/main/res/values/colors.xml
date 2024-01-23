@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Stacked Horizontal Progressbar Colors -->
+    <color name="shpbr_primary_progress">#22B536</color>
+    <color name="shpbr_secondary_progress">#F30F0F</color>
 </resources>
