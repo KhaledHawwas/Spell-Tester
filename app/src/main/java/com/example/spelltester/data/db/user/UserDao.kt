@@ -1,10 +1,7 @@
 package com.example.spelltester.data.db.user
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 import com.example.spelltester.data.db.attempt.Attempt
 
 @Dao
@@ -17,11 +14,11 @@ interface UserDao {
     fun getUserByUsername(username: String): User
 
     @Query("SELECT * FROM users")
-    fun getAllUsers(): List<User>
+    fun getAllUsers(): LiveData<List<User>>
 
     @Delete
     fun deleteUser(user: User)
 
-    @Query("SELECT * FROM attempt WHERE userId = :userId")
+    @Query("SELECT * FROM attempts WHERE userId = :userId")
     fun getAttemptsByUserId(userId: Int): List<Attempt>
 }

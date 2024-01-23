@@ -8,29 +8,31 @@ import com.example.spelltester.data.db.quiz.Quiz
 
 class AppRepository(
     private val db:AppDatabase
-) {
+) : Repository {
     //words
-    fun getWordByWordId(wordId: Int)=db.wordDao().getWordByWordId(wordId)
-    fun deleteWord(word: Word)=     db.wordDao().deleteWord(word)
-    fun upsert(word: Word)= db.wordDao().upsert(word)
-
+    override fun getWordByWordId(wordId: Int)=db.wordDao().getWordByWordId(wordId)
+    override fun deleteWord(word: Word)=     db.wordDao().deleteWord(word)
+    override fun upsert(word: Word)= db.wordDao().upsert(word)
+override fun getWordByQuizId(quizId: Int)=db.wordDao().getWordByQuizId(quizId)
     //users
-    fun upsert(user: User)= db.userDao().upsert(user)
-    fun getAllUsers() = db.userDao().getAllUsers()
-    fun getUserByUsername(username: String)=db.userDao().getUserByUsername(username)
+   override fun upsert(user: User)= db.userDao().upsert(user)
+   override fun getAllUsers() = db.userDao().getAllUsers()
+   override fun getUserByUsername(username: String)=db.userDao().getUserByUsername(username)
 
     //attempts
-    fun getAttemptsByUserId(userId: Int)=db.userDao().getAttemptsByUserId(userId)
-    fun getAllAttempt() = db.attemptDao().getAttempt()
-    fun upsert(attempt: Attempt) = db.attemptDao().upsert(attempt)
-    fun deleteAttempt(attempt: Attempt) = db.attemptDao().deleteAttempt(attempt)
-    fun getAttemptByWordId(wordId: Int) =
+  override fun getAttemptsByUserId(userId: Int)=db.userDao().getAttemptsByUserId(userId)
+  override fun getAttemptsByQuizId(quizId: Int)=db.quizDao().getAttemptsByQuizId(quizId)
+  override fun getAllAttempt() = db.attemptDao().getAttempt()
+  override fun upsert(attempt: Attempt) = db.attemptDao().upsert(attempt)
+  override fun deleteAttempt(attempt: Attempt) = db.attemptDao().deleteAttempt(attempt)
+  override fun getAttemptByWordId(wordId: Int) =
     db.attemptDao().getAttemptByWordId(wordId)
 
     //quiz's
-    fun upsert(quiz: Quiz)=db.quizDao().upsert(quiz)
-    fun delete(quiz: Quiz)=db.quizDao().deleteQuiz(quiz)
-    fun getAllQuiz()=db.quizDao().getAllQuiz()
+  override fun upsert(quiz: Quiz)=db.quizDao().upsert(quiz)
+  override fun delete(quiz: Quiz)=db.quizDao().deleteQuiz(quiz)
+  override fun getAllQuiz()=db.quizDao().getAllQuiz()
+
 
     companion object {
         @Volatile

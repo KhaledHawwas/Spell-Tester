@@ -1,15 +1,16 @@
 package com.example.spelltester.data.db.word
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 
-@Entity(tableName = "words")
-data class Word (
+@Entity(tableName = "words",)
+data class Word(
 
     val englishWord: String,
     val arabicWord: String,
+    val quizId: Int?=null,
     @PrimaryKey(autoGenerate = true)
-    var wordId: Int=0
+    @ColumnInfo(name = "wordId")
+    var wordId: Int=1
 )
 {
     fun difficultyLevel(): Int {

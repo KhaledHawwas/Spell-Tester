@@ -1,10 +1,8 @@
 package com.example.spelltester.data.db.quiz
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
+import com.example.spelltester.data.db.attempt.Attempt
 
 @Dao
 interface QuizDao {
@@ -12,9 +10,12 @@ interface QuizDao {
     fun upsert(quiz: Quiz)
 
     @Query("SELECT * FROM quiz")
-    fun getAllQuiz(): List<Quiz>
+    fun getAllQuiz(): LiveData<List<Quiz>>
 
     @Delete
     fun deleteQuiz(quiz: Quiz)
+
+    @Query("SELECT * FROM attempts WHERE quizId = :quizId")
+     fun getAttemptsByQuizId(quizId: Int): List<Attempt>
 
 }

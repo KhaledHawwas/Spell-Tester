@@ -1,11 +1,6 @@
 package com.example.spelltester.data.db.word
 
-import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface WordDao {
@@ -21,4 +16,6 @@ interface WordDao {
     @Query("SELECT * FROM words WHERE wordId = :wordId")
     fun getWordByWordId(wordId: Int): Word
 
+    @Query("SELECT * FROM words WHERE quizId = :quizId")
+    fun getWordByQuizId(quizId: Int): List<Word>
 }

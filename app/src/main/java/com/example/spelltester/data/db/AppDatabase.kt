@@ -1,19 +1,17 @@
 package com.example.spelltester.data.db
 
-import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.example.spelltester.data.db.user.User
-import com.example.spelltester.data.db.user.UserDao
-import com.example.spelltester.data.db.word.Word
-import com.example.spelltester.data.db.word.WordDao
-import com.example.spelltester.data.db.attempt.Attempt
-import com.example.spelltester.data.db.attempt.AttemptDao
-import com.example.spelltester.data.db.quiz.Quiz
-import com.example.spelltester.data.db.quiz.QuizDao
+import android.content.*
+import androidx.room.*
+import com.example.spelltester.data.db.user.*
+import com.example.spelltester.data.db.word.*
+import com.example.spelltester.data.db.attempt.*
+import com.example.spelltester.data.db.quiz.*
 
-@Database(entities = [User::class, Word::class, Attempt::class,Quiz::class], version = 1)
+
+@Database(
+    entities = [User::class, Word::class, Attempt::class, Quiz::class],
+    version = 8,
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun wordDao(): WordDao
@@ -38,6 +36,6 @@ abstract class AppDatabase : RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java, "SpellTestDatabase.db"
-            ).allowMainThreadQueries().build()
+            ).allowMainThreadQueries().fallbackToDestructiveMigration().build()
     }
 }

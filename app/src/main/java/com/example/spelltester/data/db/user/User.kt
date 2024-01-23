@@ -1,15 +1,12 @@
 package com.example.spelltester.data.db.user
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 @Entity(tableName = "users")
 data class User(
-
     val username: String,
 
     @PrimaryKey(autoGenerate = true)
-    var userId: Int=0,
-){
-
-}
+    @ColumnInfo(name="user_id")
+    var userId: Int=1,
+)

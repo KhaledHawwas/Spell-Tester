@@ -11,11 +11,11 @@ interface AttemptDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
      fun upsert(wordShells: Attempt)
 
-    @Query("SELECT * FROM attempt WHERE wordId = :wordId")
+    @Query("SELECT * FROM attempts WHERE wordId = :wordId")
      fun getAttemptByWordId(wordId: Int):Attempt
 
 
-    @Query("SELECT * FROM attempt")
+    @Query("SELECT * FROM attempts")
      fun getAttempt(): List<Attempt>
 
     @Delete
