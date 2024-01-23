@@ -31,6 +31,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding = true
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -57,6 +60,13 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0")
 
+    //stack bar
+    implementation ("com.github.nisrulz:stackedhorizontalprogressbar:1.0.3")
+    // for adding recyclerview
+    implementation("androidx.recyclerview:recyclerview:1.2.0")
+
+    // for adding cardview
+    implementation("androidx.cardview:cardview:1.0.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
