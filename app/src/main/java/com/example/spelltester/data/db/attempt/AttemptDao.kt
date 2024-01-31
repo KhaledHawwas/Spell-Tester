@@ -1,10 +1,6 @@
 package com.example.spelltester.data.db.attempt
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface AttemptDao {
@@ -12,7 +8,7 @@ interface AttemptDao {
      fun upsert(wordShells: Attempt)
 
     @Query("SELECT * FROM attempts WHERE wordId = :wordId")
-     fun getAttemptByWordId(wordId: Int):Attempt
+    fun getAttemptByWordId(wordId: Int): Attempt?
 
 
     @Query("SELECT * FROM attempts")

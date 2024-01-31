@@ -1,8 +1,8 @@
 package com.example.spelltester.data.db.quiz
 
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.*
 import androidx.room.*
-import com.example.spelltester.data.db.attempt.Attempt
+import com.example.spelltester.data.db.attempt.*
 
 @Dao
 interface QuizDao {
@@ -16,6 +16,9 @@ interface QuizDao {
     fun deleteQuiz(quiz: Quiz)
 
     @Query("SELECT * FROM attempts WHERE quizId = :quizId")
-     fun getAttemptsByQuizId(quizId: Int): List<Attempt>
+    fun getAttemptsByQuizId(quizId: Int): List<Attempt>
+
+    @Query("SELECT * FROM quiz WHERE quizId = :quizId")
+    fun getQuizByQuizId(quizId: Int): Quiz?
 
 }

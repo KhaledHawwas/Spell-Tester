@@ -7,7 +7,6 @@ data class Word(
 
     val englishWord: String,
     val arabicWord: String,
-    val quizId: Int?=null,
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "wordId")
     var wordId: Int=1

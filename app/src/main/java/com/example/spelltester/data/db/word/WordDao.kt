@@ -8,14 +8,14 @@ interface WordDao {
      fun upsert(word: Word)
 
     @Query("SELECT * FROM words")
-     fun getAllWords(): List<Word>
+    fun getAllWords(): List<Word>
 
     @Delete
-     fun deleteWord(word: Word)
+    fun deleteWord(word: Word)
 
     @Query("SELECT * FROM words WHERE wordId = :wordId")
-    fun getWordByWordId(wordId: Int): Word
+    fun getWordByWordId(wordId: Int): Word?
 
-    @Query("SELECT * FROM words WHERE quizId = :quizId")
-    fun getWordByQuizId(quizId: Int): List<Word>
+    @Query("SELECT * FROM words WHERE wordId IN (:wordsId)")
+    fun getWordsByWordsId(wordsId: IntArray): List<Word>
 }

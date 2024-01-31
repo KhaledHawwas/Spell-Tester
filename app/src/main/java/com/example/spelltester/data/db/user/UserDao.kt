@@ -11,7 +11,7 @@ interface UserDao {
     fun upsert(users: User)
 
     @Query("SELECT * FROM users WHERE username = :username")
-    fun getUserByUsername(username: String): User
+    fun getUserByUsername(username: String): User?
 
     @Query("SELECT * FROM users")
     fun getAllUsers(): LiveData<List<User>>
