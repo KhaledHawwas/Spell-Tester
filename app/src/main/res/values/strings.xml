@@ -1,4 +1,18 @@
 <resources>
-    <string name="app_name">SpellTester</string>
+    <string name="app_name">Spell Test</string>
+    <string name="next">Next</string>
+    <string name="answer">Answer</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
+    <string name="wrong_answer">Wrong answer</string>
+    <string name="correct_answer">Correct answer</string>
+    <string name="the_answer_is">The answer is</string>
+    <string name="remain">remain</string>
+    <string name="words_count">words count</string>
+    <string name="congratulation">Congratulation !!  you finished the test</string>
+    <string name="good">good</string>
+    <string name="bad">bad</string>
+    <string name="answered">answered</string>
+    <string name="not_answered">not answered</string>
 
 </resources>
