@@ -7,11 +7,13 @@ import com.example.spelltester.data.db.word.*
 import com.example.spelltester.data.db.attempt.*
 import com.example.spelltester.data.db.quiz.*
 
+const val databaseName = "SpellTestDatabase.db"
 
 @Database(
     entities = [User::class, Word::class, Attempt::class, Quiz::class],
-    version = 8,
+    version = 9,
 )
+@TypeConverters(IntArrayConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun wordDao(): WordDao
@@ -35,7 +37,10 @@ abstract class AppDatabase : RoomDatabase() {
         private fun createDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
-                AppDatabase::class.java, "SpellTestDatabase.db"
-            ).allowMainThreadQueries().fallbackToDestructiveMigration().build()
+                AppDatabase::class.java, databaseName
+            ).allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .createFromAsset("database/$databaseName")
+                .build()
     }
 }
