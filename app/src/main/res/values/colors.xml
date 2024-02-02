@@ -2,9 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <!-- Stacked Horizontal Progressbar Colors -->
-    <color name="shpbr_primary_progress">#22B536</color>
-    <color name="shpbr_secondary_progress">#F30F0F</color>
 
     <color name="purple_200">#BB86FC</color>
     <color name="purple_300">#C896FF</color>
@@ -12,10 +9,13 @@
     <color name="purple_700">#3700B3</color>
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
-    <color name="red">#F44336</color>
+    <color name="red">#C1261B</color>
     <color name="green">#27ae60</color>
     <color name="amethyst">#9b59b6</color>
     <color name="wisteria">#8e44ad</color>
     <color name="silver">#bdc3c7</color>
     <color name="midnight_blue">#2c3e50</color>
+    <!-- Stacked Horizontal Progressbar Colors -->
+    <color name="shpbr_primary_progress">@color/green</color>
+    <color name="shpbr_secondary_progress">@color/red</color>
 </resources>

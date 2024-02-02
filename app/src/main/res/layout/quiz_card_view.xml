@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="108dp"
     android:layout_margin="8dp"
     app:cardElevation="6dp">
 
@@ -16,35 +15,51 @@
             android:id="@+id/card_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="start"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/start"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/card_tv"
+            android:id="@+id/card_name_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="error"
-            app:layout_constraintStart_toEndOf="@+id/card_start"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="25sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:lines="4"
             android:maxLines="5"
             android:singleLine="false"
-            android:ellipsize="end"
-            android:lines="4"  />
+            android:text="@string/error"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/card_start"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar
             android:id="@+id/card_progress"
             style="?android:attr/progressBarStyleHorizontal"
-            android:progressDrawable="@drawable/stacked_horizontal_progress"
             android:layout_width="0dp"
-            android:layout_height="32dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
             android:indeterminate="false"
             android:max="100"
             android:progress="50"
+            android:progressDrawable="@drawable/stacked_horizontal_progress"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
         </github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar>
+
+        <TextView
+            android:id="@+id/card_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error"
+            app:layout_constraintStart_toStartOf="@+id/card_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/card_name_tv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

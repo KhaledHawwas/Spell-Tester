@@ -26,5 +26,7 @@
     <string name="known_words">known words:</string>
     <string name="unanswered_words">unanswered words:</string>
     <string name="unknown_words">unknown words:</string>
+    <string name="start">start</string>
+    <string name="error">error</string>
 
 </resources>

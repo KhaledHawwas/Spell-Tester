@@ -27,4 +27,6 @@
     <string name="known_words">الكلمات المعروفة:</string>
     <string name="unanswered_words">الكلمات الغير مجابة:</string>
     <string name="unknown_words">الكلمات الغير معروفة</string>
+    <string name="start">إبدأ</string>
+    <string name="error">خطأ</string>
 </resources>
