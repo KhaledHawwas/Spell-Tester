@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">اختبار التهجئة</string>
+    <string name="next">التالي</string>
+    <string name="answer">اجب</string>
+    <string name="correct">صحيح</string>
+    <string name="wrong">خطأ</string>
+    <string name="wrong_answer">إجابة خاطئة</string>
+    <string name="correct_answer">إجابة صحيحة</string>
+    <string name="the_answer_is">إلاجابة هي</string>
+    <string name="remain">المتبقي</string>
+    <string name="words_count">عدد الكلمات</string>
+    <string name="congratulation">تهانينا !! لقد انهيت الأختبار</string>
+    <string name="good">جيد</string>
+    <string name="bad">سيئ</string>
+    <string name="answered">مجاب</string>
+    <string name="not_answered">غير مجاب</string>
+    <string name="error_finding_word">خطأ في ايجاد الكلمة</string>
+    <string name="please_enter_a_word">رجاءً ادخال الكلمة</string>
+    <string name="no_quiz_selected">لم يتم اختيار إختبار</string>
+    <string name="no_words_in_quiz">ليس هناك كلمات في الأختبار</string>
+    <string name="wrong_answer_points">إجابة خاطئة. النقاط:</string>
+    <string name="right_answer_points">إجابة صحيحة. النقاط:</string>
+    <string name="you_are_done">لقد انتهيت</string>
+    <string name="done">الإنتهاء</string>
+    <string name="error_finding_quiz">خطأ في إيجاد الإختبار</string>
+    <string name="known_words">الكلمات المعروفة:</string>
+    <string name="unanswered_words">الكلمات الغير مجابة:</string>
+    <string name="unknown_words">الكلمات الغير معروفة</string>
+</resources>

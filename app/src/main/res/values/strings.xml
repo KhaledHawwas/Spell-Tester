@@ -14,5 +14,17 @@
     <string name="bad">bad</string>
     <string name="answered">answered</string>
     <string name="not_answered">not answered</string>
+    <string name="error_finding_word">error finding word</string>
+    <string name="please_enter_a_word">please enter a word</string>
+    <string name="no_quiz_selected">No quiz selected</string>
+    <string name="no_words_in_quiz">No words in quiz:</string>
+    <string name="wrong_answer_points">"wrong answer\t\t points: "</string>
+    <string name="right_answer_points">"right answer\t\t points: "</string>
+    <string name="you_are_done">you are done</string>
+    <string name="done">done</string>
+    <string name="error_finding_quiz">Error finding quiz</string>
+    <string name="known_words">known words:</string>
+    <string name="unanswered_words">unanswered words:</string>
+    <string name="unknown_words">unknown words:</string>
 
 </resources>
