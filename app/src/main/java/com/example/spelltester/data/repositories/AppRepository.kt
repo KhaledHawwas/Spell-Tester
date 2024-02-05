@@ -13,7 +13,13 @@ class AppRepository(
     override fun getWordByWordId(wordId: Int): Word? = db.wordDao().getWordByWordId(wordId)
     override fun deleteWord(word: Word) = db.wordDao().deleteWord(word)
     override fun upsert(word: Word) = db.wordDao().upsert(word)
-    override fun getWordsByWordsId(wordsId: IntArray) = db.wordDao().getWordsByWordsId(wordsId)
+    override fun getWordsByWordsId(wordsId: IntArray) : List<Word>{
+        val words = mutableListOf<Word>()
+        wordsId.forEach {
+            words.add(db.wordDao().getWordByWordId(it)!!)
+        }
+        return words
+    }
 
     //users
     override fun upsert(user: User) = db.userDao().upsert(user)

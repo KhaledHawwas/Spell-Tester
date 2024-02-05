@@ -16,6 +16,5 @@ interface WordDao {
     @Query("SELECT * FROM words WHERE wordId = :wordId")
     fun getWordByWordId(wordId: Int): Word?
 
-    @Query("SELECT * FROM words WHERE wordId IN (:wordsId)")
-    fun getWordsByWordsId(wordsId: IntArray): List<Word>
+
 }
