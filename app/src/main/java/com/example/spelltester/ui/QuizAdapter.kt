@@ -2,19 +2,16 @@ package com.example.spelltester.ui
 
 import android.content.*
 import android.view.*
-import androidx.lifecycle.*
 import androidx.recyclerview.widget.*
-import com.example.spelltester.*
 import com.example.spelltester.data.db.*
 import com.example.spelltester.data.db.quiz.*
 import com.example.spelltester.databinding.*
 
-const val TAG = "QUIZ_ADAPTER"
+private const val TAG = "QUIZ_ADAPTER"
 
 internal const val QUIZ_ID_KEY = "quizId"
 
 class QuizAdapter(
-    var liveData: LiveData<List<Quiz>>
 ) : RecyclerView.Adapter<QuizAdapter.QuizViewHolder>() {
     val size
         get() = quizList.size
@@ -45,9 +42,6 @@ class QuizAdapter(
         val progress = quiz.calculateProgress()
         holder.itemView.context.apply   {
         binding.cardNameTv.text = quiz.name
-          binding.cardInfoTv.text=  "${getString(R.string.known_words)}${progress.correct}\n${getString(R.string.unknown_words)}${progress.incorrect}\n${
-                getString(R.string.unanswered_words)
-            }${progress.unanswered}"
         }
         binding.cardStart.setOnClickListener {
             val intent = Intent(it.context, SpellTestingActivity::class.java)
@@ -58,6 +52,10 @@ class QuizAdapter(
             max = progress.correct + progress.incorrect + progress.unanswered
             setProgress(progress.correct)
             secondaryProgress = progress.incorrect
+        }
+            val popupMenu = CardPopupMenu( binding.cardMore.rootView,position,quiz.quizId,this)
+        binding.cardMore.setOnClickListener {
+            popupMenu.show()
         }
     }
 
