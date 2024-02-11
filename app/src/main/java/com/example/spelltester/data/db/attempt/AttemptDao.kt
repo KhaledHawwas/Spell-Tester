@@ -1,6 +1,7 @@
 package com.example.spelltester.data.db.attempt
 
 import androidx.room.*
+import kotlinx.coroutines.flow.*
 
 @Dao
 interface AttemptDao {
@@ -10,9 +11,8 @@ interface AttemptDao {
     @Query("SELECT * FROM attempts WHERE wordId = :wordId")
     fun getAttemptByWordId(wordId: Int): Attempt?
 
-
     @Query("SELECT * FROM attempts")
-     fun getAttempt(): List<Attempt>
+     fun getAttempt(): Flow<List<Attempt>>
 
     @Delete
      fun deleteAttempt(wordShells: Attempt)

@@ -5,6 +5,7 @@ import com.example.spelltester.data.db.attempt.*
 import com.example.spelltester.data.db.quiz.*
 import com.example.spelltester.data.db.user.*
 import com.example.spelltester.data.db.word.*
+import kotlinx.coroutines.flow.*
 
 interface Repository {
     fun getWordByWordId(wordId: Int): Word?
@@ -20,7 +21,7 @@ interface Repository {
     //attempts
     fun getAttemptsByUserId(userId: Int): List<Attempt>
     fun getAttemptsByQuizId(quizId: Int): List<Attempt>
-    fun getAllAttempt(): List<Attempt>
+    fun getAllAttempt(): Flow<List<Attempt>>
     fun upsert(attempt: Attempt)
     fun deleteAttempt(attempt: Attempt)
     fun getAttemptByWordId(wordId: Int): Attempt?
